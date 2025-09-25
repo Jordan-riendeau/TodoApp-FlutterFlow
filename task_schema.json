@@ -1,0 +1,32 @@
+{
+      "type": "array",
+      "title": "Tasks Collection",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "details": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "boolean"
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Firestore timestamp"
+          },
+          "user": {
+            "type": "string",
+            "pattern": "^/users/[A-Za-z0-9_-]+$",
+            "description": "Reference to a user document"
+          }
+        },
+        "required": ["title", "completed", "created", "user"]
+      }
+    }
+  },
+  "required": ["users", "tasks"]
+}
