@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/todo-app.schema.json",
+  "title": "ToDo App Firestore Schema",
+  "type": "object",
+  "properties": {
+    "users": {
+      "type": "array",
+      "title": "Users Collection",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uid": {
+            "type": "string",
+            "description": "Unique identifier for the user"
+          },
+          "display_name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "photo_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "birthdate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Firestore timestamp"
+          },
+          "created_time": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Firestore timestamp"
+          }
+        },
+        "required": ["uid", "display_name", "email", "created_time"]
+      }
+    }
